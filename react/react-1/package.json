@@ -12,7 +12,7 @@
   "scripts": {
     "pretest": "npm install",
     "prestart": "npm install",
-    "start": "cross-env PORT=8000 react-scripts start",
+    "start": "cross-env PORT=9000 react-scripts start",
     "build": "react-scripts build",
     "test2": "./node_modules/.bin/react-scripts test --watchAll=false --verbose --env=jsdom --testResultsProcessor ./node_modules/jest-junit",
     "test": "react-scripts test --watchAll=false --verbose --env=jsdom --testResultsProcessor=jest-junit",

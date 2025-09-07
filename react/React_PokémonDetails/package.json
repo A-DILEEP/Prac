@@ -13,9 +13,9 @@
   "scripts": {
     "pretest": "npm install",
     "prestart": "npm install",
-    "start": "PORT=8000 react-scripts start",
+    "start": "cross-env PORT=9000 react-scripts start",
     "build": "react-scripts build",
-    "test": "./node_modules/.bin/react-scripts test --watchAll=false --verbose --env=jsdom --testResultsProcessor ./node_modules/jest-junit",
+    "test": "react-scripts test --watchAll=false --verbose --env=jsdom --testResultsProcessor=jest-junit",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
@@ -23,6 +23,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.4.3",
+    "cross-env": "^10.0.0",
     "fetch-mock": "9.11.0",
     "jest-junit": "^16.0.0",
     "node-fetch": "^2.6.1",

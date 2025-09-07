@@ -1,21 +1,25 @@
-import React  from "react";
+import React, { useState } from "react";
 import "./index.css";
 
 export default function NavBar() {
-
+  const [val, setVal] = useState("HOME"); 
+  const handleClick = (e) => {
+    setVal(e.toUpperCase()); 
+  };
   return (
     <div className="layout-column justify-content-center align-items-center">
-      <div className="layout-row justify-content-around align-items-center mt-20 links"
-           data-testid="navigation-tabs">
-          <a>Home</a>
-          <a>News</a>
-          <a>Contact</a>
-          <a>About</a>
+      <div
+        className="layout-row justify-content-around align-items-center mt-20 links"
+        data-testid="navigation-tabs"
+      >
+        <a onClick={()=>handleClick("HOME")}>Home</a>
+        <a onClick={()=>handleClick("NEWS")}>News</a>
+        <a onClick={()=>handleClick("CONTACT")}>Contact</a>
+        <a onClick={()=>handleClick("ABOUT")}>About</a>
       </div>
-
       <div className="card w-20 ma-0">
         <section className="card-text" data-testid="tab-content">
-          <span>PAGE</span>
+          <span>{val} PAGE</span>
         </section>
       </div>
     </div>
