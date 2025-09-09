@@ -53,14 +53,11 @@
 
 import React, { useState } from "react";
 import "./Team.css";
-
 const Team = ({ team, id, teams, setTeams }) => {
   const [newChannelName, setNewChannelName] = useState("");
-
   const isAddChannelEnabled =
     newChannelName.trim() !== "" &&
     !team.channels.some((c) => c.name === newChannelName);
-
   const addChannel = () => {
     if (!isAddChannelEnabled) return;
     const updatedTeams = [...teams];
@@ -78,7 +75,6 @@ const Team = ({ team, id, teams, setTeams }) => {
   return (
     <div>
       {team && <h4 className="mt-0 mb-6">{team.name}</h4>}
-
       {team && (
         <div className="layout-row justify-content-end mb-6">
           <input
@@ -98,7 +94,6 @@ const Team = ({ team, id, teams, setTeams }) => {
           </button>
         </div>
       )}
-
       {team && (
         <ul className="styled mb-20 pl-25" data-testid={"channel-list-" + id}>
           {team.channels &&
@@ -122,5 +117,4 @@ const Team = ({ team, id, teams, setTeams }) => {
     </div>
   );
 };
-
 export default Team;

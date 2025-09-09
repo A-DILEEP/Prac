@@ -5,11 +5,12 @@ import com.music.track.model.Track;
 
 import java.text.ParseException;
 import java.util.List;
+import java.util.Optional;
 
 public interface TrackService {
     Track createTrack(TrackRequest trackRequest);
 
-    Track getTracksByTitle(String title);
+    Optional<Track> getTracksByTitle(String title);
     List<Track> getAllTracks();
 
     void deleteTrack(Long trackId);
