@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="6" failures="0" errors="0" time="34.296">
-  <testsuite name="CountryFilter App" errors="0" failures="0" skipped="0" timestamp="2025-09-07T11:50:44" time="10.573" tests="6">
-    <testcase classname="CountryFilter App should render the Initial state without crash" name="CountryFilter App should render the Initial state without crash" time="0.075">
+<testsuites name="jest tests" tests="6" failures="0" errors="0" time="16.811">
+  <testsuite name="CountryFilter App" errors="0" failures="0" skipped="0" timestamp="2025-09-09T14:08:59" time="5.991" tests="6">
+    <testcase classname="CountryFilter App should render the Initial state without crash" name="CountryFilter App should render the Initial state without crash" time="0.089">
     </testcase>
-    <testcase classname="CountryFilter App should have right countries in the rendered HTML after filtering" name="CountryFilter App should have right countries in the rendered HTML after filtering" time="0.033">
+    <testcase classname="CountryFilter App should have right countries in the rendered HTML after filtering" name="CountryFilter App should have right countries in the rendered HTML after filtering" time="0.037">
     </testcase>
-    <testcase classname="CountryFilter App should filter countries without case sensitivity" name="CountryFilter App should filter countries without case sensitivity" time="0.032">
+    <testcase classname="CountryFilter App should filter countries without case sensitivity" name="CountryFilter App should filter countries without case sensitivity" time="0.034">
     </testcase>
-    <testcase classname="CountryFilter App should support fuzzy search" name="CountryFilter App should support fuzzy search" time="0.028">
+    <testcase classname="CountryFilter App should support fuzzy search" name="CountryFilter App should support fuzzy search" time="0.035">
     </testcase>
-    <testcase classname="CountryFilter App should show all contents on resetting the typed fields" name="CountryFilter App should show all contents on resetting the typed fields" time="0.064">
+    <testcase classname="CountryFilter App should show all contents on resetting the typed fields" name="CountryFilter App should show all contents on resetting the typed fields" time="0.073">
     </testcase>
-    <testcase classname="CountryFilter App should should show correct content after a series of searches" name="CountryFilter App should should show correct content after a series of searches" time="0.063">
+    <testcase classname="CountryFilter App should should show correct content after a series of searches" name="CountryFilter App should should show correct content after a series of searches" time="0.07">
     </testcase>
   </testsuite>
 </testsuites>

@@ -2,6 +2,7 @@ package com.music.track.controller;
 
 import com.music.track.dto.TrackRequest;
 import com.music.track.model.Track;
+import com.music.track.repository.TrackRepository;
 import com.music.track.service.TrackService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,14 +11,17 @@ import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("music/platform/v1/tracks")
 public class TrackController {
     private final TrackService trackService;
+    private final TrackRepository trackRepository;
     @Autowired
-    public TrackController(TrackService trackService) {
+    public TrackController(TrackService trackService,TrackRepository trackRepository) {
         this.trackService = trackService;
+        this.trackRepository=trackRepository;
     }
     /**
      * Create a track
@@ -26,7 +30,7 @@ public class TrackController {
      */
     @PostMapping()
     public ResponseEntity<Track> createTrack(@RequestBody TrackRequest trackRequest){
-        return null;
+        return ResponseEntity.status(HttpStatus.CREATED).body(trackService.createTrack(trackRequest));
     }
     /**
      * Get all tracks
@@ -34,7 +38,7 @@ public class TrackController {
      */
     @GetMapping()
     public ResponseEntity<List<Track>> getAllTracks(){
-        return null;
+        return ResponseEntity.status(HttpStatus.OK).body(trackService.getAllTracks());
     }
 
     /**
@@ -44,7 +48,8 @@ public class TrackController {
      */
     @DeleteMapping("/{trackId}")
     public ResponseEntity<Void> deleteTrack(@PathVariable Long trackId){
-        return null;
+    	trackService.deleteTrack(trackId);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
     /**
@@ -53,8 +58,8 @@ public class TrackController {
      * @return
      */
     @GetMapping("/search")
-    public ResponseEntity<Track> getTrackByTitle(@RequestParam String title) throws ParseException {
-        return null;
+    public ResponseEntity<Optional<Track>> getTrackByTitle(@RequestParam String title) throws ParseException {
+        return ResponseEntity.status(HttpStatus.OK).body(trackService.getTracksByTitle(title));
     }
 
 }
