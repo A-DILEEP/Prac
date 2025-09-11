@@ -33,22 +33,31 @@ public class SampleController {
 		@GetMapping("/filter/price/{initial_price}/{final_price}")  
 		private ResponseEntity< ? > filtered_books(@PathVariable("initial_price") int init_price , @PathVariable("final_price") int final_price)   
 		{
-             
-
-   List<FilteredProducts> list=new ArrayList<>();
-	 for(int i=0;i<data.length();i++){
-		JSONObject json=data.getJSONObject(i);
-		int price=json.getInt("price");
-	
-
-		if(price>init_price && price<final_price){
-				String barcode=json.getString("barcode");
-			 list.add(new FilteredProducts(barcode));
-		}
-
-	 }
-
-	 return  list.size()>0?ResponseEntity.status(200).body(list):ResponseEntity.notFound().build();
+			List<FilteredProducts> mylist=new ArrayList<>();
+			for(int i=0;i<data.length();i++) {
+				JSONObject json=data.getJSONObject(i);
+				int price=json.getInt("price");
+				if(price>init_price && price <final_price) {
+					String barcode=json.getString("barcode");
+					mylist.add(new FilteredProducts(barcode));
+				}
+			}
+			
+			return mylist.size()>0 ? ResponseEntity.status(200).body(mylist):ResponseEntity.notFound().build();
+//   List<FilteredProducts> list=new ArrayList<>();
+//	 for(int i=0;i<data.length();i++){
+//		JSONObject json=data.getJSONObject(i);
+//		int price=json.getInt("price");
+//	
+//
+//		if(price>init_price && price<final_price){
+//				String barcode=json.getString("barcode");
+//			 list.add(new FilteredProducts(barcode));
+//		}
+//
+//	 }
+//
+//	 return  list.size()>0?ResponseEntity.status(200).body(list):ResponseEntity.notFound().build();
 }
 @CrossOrigin
     @GetMapping("/sort/price")
