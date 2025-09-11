@@ -1,0 +1,19 @@
+package com.hackerrank.configstyles.service;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class EmailNotificationService implements NotificationService {
+    private String serviceName;
+
+    public EmailNotificationService() {
+        this.serviceName = "EMAIL_SERVICE";
+    }
+
+
+    @Override
+    public ServiceResponse sendNotification(String notification) {
+        return new ServiceResponse(serviceName, notification);
+    }
+
+}
