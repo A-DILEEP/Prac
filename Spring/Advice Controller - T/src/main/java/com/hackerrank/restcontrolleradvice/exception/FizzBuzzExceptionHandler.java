@@ -19,33 +19,20 @@ public class FizzBuzzExceptionHandler extends ResponseEntityExceptionHandler {
 
     //TODO:: implement handler methods for FizzException, BuzzException and FizzBuzzException
     @ExceptionHandler(FizzException.class)
-    public ResponseEntity<Object> handleFizzException(
-            FizzException ex) {
-//        Map<String, Object> body = new LinkedHashMap<>();
-//        body.put("message", ex.getMessage());
-//        body.put("errorReason", ex.getErrorReason());
-//        return new ResponseEntity<>(body, HttpStatus.INTERNAL_SERVER_ERROR);
-
-
+    public ResponseEntity<Object> handleFizzException(FizzException ex) {
         GlobalError error=new GlobalError(ex.getMessage(),ex.getErrorReason());
         return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @ExceptionHandler(BuzzException.class)
-    public ResponseEntity<Object> handleBuzzException(
-            BuzzException ex) {
-        Map<String, Object> body = new LinkedHashMap<>();
-        body.put("message", ex.getMessage());
-        body.put("errorReason", ex.getErrorReason());
-        return new ResponseEntity<>(body, HttpStatus.BAD_REQUEST);
+    public ResponseEntity<Object> handleBuzzException(BuzzException ex) {
+    	GlobalError error=new GlobalError(ex.getMessage(),ex.getErrorReason());
+    	return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(FizzBuzzException.class)
-    public ResponseEntity<Object> handleFizzBuzzException(
-            FizzBuzzException ex) {
-        Map<String, Object> body = new LinkedHashMap<>();
-        body.put("message", ex.getMessage());
-        body.put("errorReason", ex.getErrorReason());
-        return new ResponseEntity<>(body, HttpStatus.INSUFFICIENT_STORAGE);
+    public ResponseEntity<Object> handleFizzBuzzException(FizzBuzzException ex) {
+    	GlobalError error=new GlobalError(ex.getMessage(),ex.getErrorReason());
+        return new ResponseEntity<>(error, HttpStatus.INSUFFICIENT_STORAGE);
     }
 }

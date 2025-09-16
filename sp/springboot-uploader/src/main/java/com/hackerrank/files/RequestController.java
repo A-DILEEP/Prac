@@ -65,24 +65,24 @@ public class RequestController {
         }
     }
 
-    @GetMapping("/downloader")
-    public ResponseEntity<Resource> downloader(@RequestParam String fileName) {
-        try {
-            Path filePath = Paths.get(UPLOAD_DIR).resolve(fileName).normalize();
-            Resource resource = new UrlResource(filePath.toUri());
-
-            if (!resource.exists() || !resource.isReadable()) {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-            }
-
-            return ResponseEntity.ok()
-                    .contentType(MediaType.APPLICATION_OCTET_STREAM)
-                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileName + "\"")
-                    .body(resource);
-
-        } catch (MalformedURLException e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-        }
-    }
+//    @GetMapping("/downloader")
+//    public ResponseEntity<Resource> downloader(@RequestParam String fileName) {
+//        try {
+//            Path filePath = Paths.get(UPLOAD_DIR).resolve(fileName).normalize();
+//            Resource resource = new UrlResource(filePath.toUri());
+//
+//            if (!resource.exists() || !resource.isReadable()) {
+//                return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+//            }
+//
+//            return ResponseEntity.ok()
+//                    .contentType(MediaType.APPLICATION_OCTET_STREAM)
+//                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileName + "\"")
+//                    .body(resource);
+//
+//        } catch (MalformedURLException e) {
+//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+//        }
+//    }
 }
 
