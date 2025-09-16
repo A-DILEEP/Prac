@@ -10,8 +10,4 @@
           class="com.hackerrank.configstyles.service.ThirdPartyNotificationService">
         <constructor-arg value="THIRD_PARTY_SERVICE"/>
     </bean>
-
-
-
- 
 </beans>

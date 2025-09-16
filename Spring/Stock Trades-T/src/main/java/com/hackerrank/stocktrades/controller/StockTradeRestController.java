@@ -45,9 +45,12 @@ public class StockTradeRestController {
   }
 
   @GetMapping("/{id}")
-  public ResponseEntity<StockTrade> getStockTradesById(@PathVariable @NotNull Integer id) {
+  public ResponseEntity<Optional<StockTrade>> getStockTradesById(@PathVariable @NotNull Integer id) {
     Optional<StockTrade> stockTrade = service.getStockTradeById(id);
-    return stockTrade.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body(null));
+    if(!stockTrade.isPresent()) {
+    	return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
+    return ResponseEntity.status(HttpStatus.OK).body(stockTrade);
   }
 
   @RequestMapping(value = "/{ignoredId}", method = {RequestMethod.DELETE, RequestMethod.PUT, RequestMethod.PATCH})
