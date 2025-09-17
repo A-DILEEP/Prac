@@ -24,22 +24,18 @@ public class FizzBuzzExceptionHandler extends ResponseEntityExceptionHandler {
     //TODO:: implement handler methods for FizzException, BuzzException and FizzBuzzException
 	
     @ExceptionHandler(FizzException.class)
-    public ResponseEntity<Object> handleFizzException(
-            FizzException ex) {
+    public ResponseEntity<Object> handleFizzException(FizzException ex) {
         GlobalError error=new GlobalError(ex.getMessage(),ex.getErrorReason());
         return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @ExceptionHandler(BuzzException.class)
-    public ResponseEntity<Object> handleBuzzException(
-            BuzzException ex) {
+    public ResponseEntity<Object> handleBuzzException(BuzzException ex) {
     	GlobalError error=new GlobalError(ex.getMessage(),ex.getErrorReason());
-        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+    	return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }
-
     @ExceptionHandler(FizzBuzzException.class)
-    public ResponseEntity<Object> handleFizzBuzzException(
-            FizzBuzzException ex) {
+    public ResponseEntity<Object> handleFizzBuzzException(FizzBuzzException ex) {
     	GlobalError error=new GlobalError(ex.getMessage(),ex.getErrorReason());
         return new ResponseEntity<>(error, HttpStatus.INSUFFICIENT_STORAGE);
     }
