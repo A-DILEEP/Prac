@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="4" failures="0" errors="0" time="16.123">
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2025-09-07T13:43:36" time="6.235" tests="4">
-    <testcase classname=" Test Initial Loading of the App" name=" Test Initial Loading of the App" time="0.029">
+<testsuites name="jest tests" tests="4" failures="0" errors="0" time="4.712">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2025-09-19T09:17:17" time="2.105" tests="4">
+    <testcase classname=" Test Initial Loading of the App" name=" Test Initial Loading of the App" time="0.039">
     </testcase>
-    <testcase classname=" Alert when invalid pokemon id" name=" Alert when invalid pokemon id" time="0.018">
+    <testcase classname=" Alert when invalid pokemon id" name=" Alert when invalid pokemon id" time="0.019">
     </testcase>
-    <testcase classname=" Test getting pokemon details" name=" Test getting pokemon details" time="0.035">
+    <testcase classname=" Test getting pokemon details" name=" Test getting pokemon details" time="0.033">
     </testcase>
-    <testcase classname=" Test getting next evolution" name=" Test getting next evolution" time="0.23">
+    <testcase classname=" Test getting next evolution" name=" Test getting next evolution" time="0.21">
     </testcase>
   </testsuite>
 </testsuites>

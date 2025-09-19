@@ -15,7 +15,8 @@ public class SortedProducts {
         this.price = price;
     }
 
-    public String getBarcode() {
+
+	public String getBarcode() {
         return barcode;
     }
 
